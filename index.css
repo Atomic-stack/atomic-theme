@@ -1,3 +1,10 @@
+:root {
+  color-scheme: light dark; /* both supported */
+  --bgColor: #fff;
+  --color: #222;
+  --codeBg: #eee;
+}
+
 html {
   font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.25em;
@@ -7,8 +14,8 @@ html {
 }
 
 body {
-  background-color: #fff;
-  color: #222;
+  background-color: var(--bgColor);
+  color: var(--color);
   max-width: 60ch;
   margin: auto;
   padding: 2em 1em;
@@ -22,6 +29,35 @@ h1,h2,h3,h4,h5,h6 {
   margin: 1em 0 1em;
 }
 
-p,ul,ol {
+p,ul,ol,pre {
   margin-bottom: 2rem;
+}
+
+pre {
+  background-color: var(--codeBg);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  display: block;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+body.dark {
+  --bgColor: #111;
+  --color: #eee;
+  color-scheme: dark;
+  font-weight: 350;
+}
+
+body.dark a {
+  color: #809fff;
+}
+
+body.dark pre {
+  --codeBg: #222;
+}
+
+body.dark img {
+  filter: brightness(.8) contrast(1.2);
 }

@@ -51,5 +51,15 @@
         <pre>&lt;link rel="stylesheet" href="styles.css" type="text/css"&gt;</pre>
       </li>
     </ol>
+
+    <script type="text/javascript">
+      var dark = localStorage.getItem('dark'),
+        prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
+      function toggle() {
+        dark = document.body.classList.toggle('dark')
+        localStorage.setItem('dark', dark)
+      }
+      if (prefersDark || dark == 'true') toggle()
+    </script>
   </body>
 </html>
