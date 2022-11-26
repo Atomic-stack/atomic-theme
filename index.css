@@ -350,6 +350,134 @@ button.icon-only {
   padding: 1rem;
 }
 
+/* Inputs */
+[type="checkbox"],
+[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+  margin-right: .5rem;
+  margin-left: .5rem;
+}
+
+input:not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="reset"]):not([type="submit"]),
+select,
+textarea,
+textarea[type="text"] {
+  font-family: inherit;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  background-color: var(--color-darkGrey);
+  border: 1px solid var(--color-lightGrey);
+  font-size: 1em;
+  transition: all 0.2s ease-out 0s;
+  display: block;
+  width: 100%;
+}
+
+input:not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="reset"]):not([type="submit"]):focus,
+select:focus,
+textarea:focus,
+textarea[type="text"]:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 2px var(--color-primary);
+  outline: none;
+}
+
+input.error:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="reset"]),
+textarea.error,
+input:invalid {
+  border-color: var(--color-error);
+}
+
+input.success:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="reset"]),
+textarea.success {
+  border-color: var(--color-success);
+}
+
+select {
+  appearance: none;
+  background: var(--color-darkGrey) no-repeat 100%;
+  background-size: 1ex;
+  background-origin: content-box;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='%23555'><polygon points='0,0 60,0 30,60'/></svg>");
+}
+
+::placeholder {
+  color: #bdbfc4;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type="search"] {
+  appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
 
 /*
 Add the correct display in Chrome and Safari.
