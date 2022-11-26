@@ -238,6 +238,119 @@ legend {
   letter-spacing: 0.1rem;
 }
 
+/* BUTTONS */
+button,
+[type="reset"],
+[type="submit"] {
+  padding: 0.5rem 1rem;
+  color: var(--color-darkGrey);
+  background: var(--color-lightGrey);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  transform: scale(1);
+  display: inline-block;
+  cursor: pointer;
+}
+
+.grouped {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grouped > *:not(:last-child) {
+  margin-right: 16px;
+}
+
+button + button {
+  margin-left: .5rem;
+}
+
+button:hover,
+[type="reset"]:hover,
+[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+button:active,
+[type="reset"]:active,
+[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+button:disabled,
+button:disabled:hover,
+input:disabled,
+input:disabled:hover,
+[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button.primary,
+button.secondary,
+button.dark,
+button.error,
+button.success,
+[type="submit"] {
+  color: #fff;
+  z-index: 1; /* hightlight from other button's border when grouped */
+  background-color: #000;
+  background-color: var(--color-primary);
+}
+
+button.secondary {
+  background-color: var(--color-grey);
+}
+
+button.success {
+  background-color: var(--color-success);
+}
+
+button.error {
+  background-color: var(--color-error);
+}
+
+button.dark {
+  background-color: var(--color-darkGrey);
+}
+
+button.outline {
+  background-color: transparent;
+  border-color: var(--color-lightGrey);
+  color: var(--color-lightGrey);
+}
+
+button.outline.primary {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+button.outline.secondary {
+  border-color: var(--color-grey);
+  color: var(--color-grey);
+}
+
+button.icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+button.icon > img {
+  margin-left: 4px;
+}
+
+button.icon-only {
+  padding: 1rem;
+}
+
+
 /*
 Add the correct display in Chrome and Safari.
 */
