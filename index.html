@@ -4,7 +4,7 @@
     <title>HTML</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
-    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/dist/index.css" />
   </head>
   <body>
     <nav class="nav">
@@ -56,7 +56,7 @@
     <h4>Manually:</h4>
     <ol>
       <li>
-        <p>Download the file directly from <a href="/index.css" download>here</a>.</p>
+        <p>Download the file directly from <a href="/dist/index.css" download>here</a>.</p>
         <pre>&lt;link rel="stylesheet" href="..." type="text/css"&gt;</pre>
       </li>
       <li>
@@ -90,16 +90,6 @@
           <label>
             Disabled
             <input type="text" disabled />
-          </label>
-
-          <label>
-            Text success
-            <input class="success" type="text" />
-          </label>
-
-          <label>
-            Text error
-            <input class="error" type="text" />
           </label>
 
           <p class="grouped">
@@ -226,16 +216,14 @@
         <button class="primary">Primary</button>
         <button class="secondary">Secondary</button>
         <button class="dark">Dark</button>
-        <button class="success">Success</button>
-        <button class="error">Error</button>
+        <button class="outline">Outline</button>
+        <button class="outline primary">Primary</button>
       </p>
       <p>
-        <button class="outline">Default</button>
-        <button class="outline primary">Primary</button>
-        <button class="outline secondary">Secondary</button>
-        <button class="outline dark">Dark</button>
-        <button class="outline success">Success</button>
-        <button class="outline error">Error</button>
+        <button>
+          Button icon
+          <div class="icon">❯</div>
+        </button>
       </p>
     </section>
 
@@ -372,17 +360,16 @@
     <!-- Simple modal dialog containing a form -->
     <dialog id="dialog">
       <form method="dialog">
-        <p>
-          <label
-            >Favorite animal:
-            <select>
-              <option value="default">Choose…</option>
-              <option>Brine shrimp</option>
-              <option>Red panda</option>
-              <option>Spider monkey</option>
-            </select>
-          </label>
-        </p>
+        <label>
+          Favorite animal
+          <select>
+            <option value="default">Choose…</option>
+            <option>Brine shrimp</option>
+            <option>Red panda</option>
+            <option>Spider monkey</option>
+          </select>
+        </label>
+        <p></p>
         <div>
           <button value="cancel">Cancel</button>
           <button class="primary" value="confirm">Confirm</button>
@@ -393,11 +380,11 @@
       <button onclick="document.getElementById('dialog').showModal()">Show</button>
     </p>
 
-    <h3>Meter</h3>
-    <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
-
     <h3>Progress</h3>
-    <p><progress value="75" max="100">75 %</progress></p>
+    <p>
+      <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+    </p>
     <p><progress>progress</progress></p>
+    <p><progress value="75" max="100">75 %</progress></p>
   </body>
 </html>

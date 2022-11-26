@@ -1,0 +1,15 @@
+.card {
+  padding: 1rem;
+  border-radius: 4px;
+  background: var(--bg-color);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+}
+
+.card p:last-child {
+  margin: 0;
+}
+
+.card header > * {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
