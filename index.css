@@ -2,27 +2,48 @@
   color-scheme: light dark; /* both supported */
   --bg-color: #fff;
   --font-color: #222;
-  --codeBg: #eee;
+  --bg-secondary-color: #eee;
+  --color-primary: #3333ee;
+  --color-lightGrey: #d2d6dd;
+  --color-grey: #747681;
+  --color-darkGrey: rgb(41,41,41);
+  --color-error: #d43939;
+  --color-success: #28bd14;
+  --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+  monospace;
 }
 
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size (opinionated).
+*/
 html {
-  font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.25em;
-  font-weight: 400;
-  line-height: 1.75;
-  -webkit-text-size-adjust: 100%;
+  font-family: var(--font-family-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+}
+
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
 
 body {
+  font-weight: 400;
   background-color: var(--bg-color);
   color: var(--font-color);
-  max-width: 60ch;
+  max-width: 70ch;
   margin: auto;
   padding: 1em;
-}
-
-a {
-  color: #0033cc;
 }
 
 h1,
@@ -34,6 +55,15 @@ h6 {
   margin: 2em 0 1em;
 }
 
+a {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+a:hover {
+  filter: brightness(150%);
+}
+
 p,
 ul,
 ol,
@@ -41,33 +71,212 @@ pre {
   margin-bottom: 2rem;
 }
 
-pre {
-  background-color: var(--codeBg);
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.85rem;
-  display: block;
-  padding: 1rem;
-  overflow-x: auto;
+blockquote {
+  background-color: var(--bg-secondary-color);
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--color-lightGrey);
 }
 
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  margin: 1rem 0;
+}
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-family-mono); /* 1 */
+  font-size: 85%; /* 2 */
+}
+
+code,
+kbd {
+  padding: 0 0.5rem;
+  font-size: 90%;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  background-color: var(--bg-secondary-color);
+}
+
+pre {
+  background-color: var(--bg-secondary-color);
+  border-radius: 6px;
+  font-family: monospace;
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: middle;
+  padding: 1.2rem 0.4rem;
+}
+
+thead {
+  border-bottom: 2px solid var(--color-lightGrey);
+}
+
+tfoot {
+  border-top: 2px solid var(--color-lightGrey);
+}
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+button,
+select {
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+}
+
+legend {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1rem;
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-lightGrey) var(--bg-primary);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-lightGrey);
+}
+
+/* Dark mode settings */
 @media (prefers-color-scheme: dark) {
-  body {
+  :root {
     --bg-color: #111;
     --font-color: #eee;
+    --color-primary: #4D4DFF;
+    --bg-secondary-color: #222;
+  }
+
+  body {
     color-scheme: dark;
     font-weight: 350;
   }
 
-  body a {
-    color: #809fff;
-  }
-
-  body pre {
-    --codeBg: #222;
-  }
-
-  body img {
+  img {
     filter: brightness(0.8) contrast(1.2);
   }
 }
