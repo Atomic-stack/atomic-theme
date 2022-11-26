@@ -1,5 +1,4 @@
 :root {
-  color-scheme: light dark; /* both supported */
   --bg-color: #fff;
   --font-color: #222;
   --bg-secondary-color: #eee;
@@ -10,8 +9,33 @@
   --color-error: #d43939;
   --color-success: #28bd14;
   --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
-  monospace;
+}
+
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-lightGrey) var(--bg-primary);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-lightGrey);
 }
 
 /**
@@ -26,15 +50,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   tab-size: 4; /* 3 */
-}
-
-/**
-Use a better box model (opinionated).
-*/
-*,
-::before,
-::after {
-  box-sizing: border-box;
 }
 
 body {
@@ -77,6 +92,10 @@ blockquote {
   border-left: 3px solid var(--color-lightGrey);
 }
 
+dl dt {
+  font-weight: bold;
+}
+
 /**
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
@@ -88,27 +107,38 @@ hr {
 }
 
 /**
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
-}
-
-img {
-  max-width: 100%;
-}
-
-iframe {
-  border: 0;
-}
-
-/**
 Add the correct font weight in Edge and Safari.
 */
 b,
 strong {
   font-weight: bolder;
+}
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: middle;
+  padding: 1.2rem 0.4rem;
+}
+
+thead {
+  border-bottom: 2px solid var(--color-lightGrey);
+}
+
+tfoot {
+  border-top: 2px solid var(--color-lightGrey);
 }
 
 /**
@@ -119,7 +149,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: var(--font-family-mono); /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+  monospace; /* 1 */
   font-size: 85%; /* 2 */
 }
 
@@ -148,6 +179,22 @@ pre code {
 }
 
 /**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+/**
 Add the correct font size in all browsers.
 */
 small {
@@ -171,33 +218,6 @@ sub {
 
 sup {
   top: -0.5em;
-}
-
-/**
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-*/
-table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-align: left;
-}
-
-td,
-th {
-  vertical-align: middle;
-  padding: 1.2rem 0.4rem;
-}
-
-thead {
-  border-bottom: 2px solid var(--color-lightGrey);
-}
-
-tfoot {
-  border-top: 2px solid var(--color-lightGrey);
 }
 
 /**
@@ -232,12 +252,6 @@ button,
   appearance: button;
 }
 
-legend {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1rem;
-}
-
 /* BUTTONS */
 button,
 [type="reset"],
@@ -259,8 +273,6 @@ button,
 }
 
 .grouped {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -351,17 +363,6 @@ button.icon-only {
 }
 
 /* Inputs */
-[type="checkbox"],
-[type="radio"] {
-  width: 1.25rem;
-  height: 1.25rem;
-  vertical-align: middle;
-  position: relative;
-  bottom: 2px;
-  margin-right: .5rem;
-  margin-left: .5rem;
-}
-
 input:not([type="color"]):not([type="checkbox"]):not([type="radio"]):not([type="reset"]):not([type="submit"]),
 select,
 textarea,
@@ -405,6 +406,17 @@ select {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' fill='%23555'><polygon points='0,0 60,0 30,60'/></svg>");
 }
 
+[type="checkbox"],
+[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+  margin-right: .5rem;
+  margin-left: .5rem;
+}
+
 ::placeholder {
   color: #bdbfc4;
 }
@@ -436,6 +448,9 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
 */
 legend {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.1rem;
   padding: 0;
 }
 
@@ -467,7 +482,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 Remove the inner padding in Chrome and Safari on macOS.
 */
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /**
@@ -475,7 +490,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 2. Change font properties to 'inherit' in Safari.
 */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
+  appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
@@ -484,23 +499,6 @@ Add the correct display in Chrome and Safari.
 */
 summary {
   display: list-item;
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-lightGrey) var(--bg-primary);
-}
-
-*::-webkit-scrollbar {
-  width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-
-*::-webkit-scrollbar-thumb {
-  background: var(--color-lightGrey);
 }
 
 /* Navigation bar and branding */
@@ -541,7 +539,7 @@ summary {
   .nav-center,
   .nav-start,
   .nav-end {
-      justify-content: center;
+    justify-content: center;
   }
 }
 
@@ -577,7 +575,7 @@ summary {
   padding: 1rem 2rem;
   border-radius: 4px;
   background: var(--bg-color);
-  box-shadow: 0 1px 3px var(--color-grey);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
 }
 
 .card p:last-child {
@@ -597,12 +595,12 @@ summary {
     --color-primary: #4D4DFF;
     --bg-secondary-color: #222;
   }
-
+  
   body {
     color-scheme: dark;
     font-weight: 350;
   }
-
+  
   img {
     filter: brightness(0.8) contrast(1.2);
   }
