@@ -7,6 +7,7 @@
   --color-grey: #747681;
   --color-darkGrey: rgb(41, 41, 41);
   --color-field: rgb(238, 238, 238);
+  --color-code: #905;
   --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji';
 }
@@ -45,8 +46,8 @@ Use a better box model (opinionated).
 */
 html {
   font-family: var(--font-family-sans);
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  line-height: 1.75;
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   tab-size: 4; /* 3 */
@@ -67,12 +68,18 @@ h3,
 h4,
 h5,
 h6 {
+  line-height: 1.25;
   margin: 2em 0 1em;
 }
 
 a {
   color: var(--color-primary);
   cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p,
@@ -144,7 +151,7 @@ samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; /* 1 */
   font-size: 90%; /* 2 */
-  color: #905;
+  color: var(--color-code);
 }
 
 code,
@@ -152,14 +159,14 @@ kbd {
   padding: 0 0.5rem;
   font-size: 90%;
   white-space: pre-wrap;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   padding: 0.2em 0.4em;
   background-color: var(--bg-secondary-color);
 }
 
 pre {
   background-color: var(--bg-secondary-color);
-  border-radius: 6px;
+  border-radius: 0.5rem;
   font-family: monospace;
   display: block;
   padding: 1rem;
@@ -230,8 +237,8 @@ summary {
 }
 
 dialog {
-  border-color: transparent;
   border-radius: 1rem;
+  border-color: transparent;
   padding: 1rem;
   filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
