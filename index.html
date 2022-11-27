@@ -194,18 +194,18 @@
     <h3>Datalist</h3>
     <label for="browser"
       >Choose your browser
+      <datalist id="browsersList">
+        <label for="fallback">Or pick a browser</label>
+        <select name="browser" id="fallback">
+          <option value="Edge"></option>
+          <option value="Firefox"></option>
+          <option value="Chrome"></option>
+          <option value="Opera"></option>
+          <option value="Safari"></option>
+        </select>
+      </datalist>
       <input list="browsersList" name="browser" id="browser" />
     </label>
-    <datalist id="browsersList">
-      <label for="fallback">Or pick a browser</label>
-      <select name="browser" id="fallback">
-        <option value="Edge"></option>
-        <option value="Firefox"></option>
-        <option value="Chrome"></option>
-        <option value="Opera"></option>
-        <option value="Safari"></option>
-      </select>
-    </datalist>
 
     <section>
       <h3 id="buttons">

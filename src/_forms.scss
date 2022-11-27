@@ -51,7 +51,7 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 }
 
 fieldset {
-  border: 1px solid var(--color-field);
+  border: 1px solid var(--color-mediumGrey);
   border-radius: 0.25rem;
 }
 
@@ -59,7 +59,7 @@ fieldset {
 Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
 */
 legend {
-  color: var(--color-greyMedium);
+  color: var(--color-grey);
   text-transform: uppercase;
   font-size: 0.8em;
   letter-spacing: 0.1rem;
@@ -106,6 +106,7 @@ button,
   background: var(--color-lightGrey);
   border-radius: 0.25rem;
   border-color: transparent;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   color: var(--color-darkGrey);
   cursor: pointer;
   display: inline-block;
@@ -196,19 +197,17 @@ button.outline {
 }
 
 /* Inputs */
-input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']),
+input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']),
 select,
 textarea {
   font-family: inherit;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  background-color: var(--color-field);
-  border: 1px solid var(--color-greyMedium);
+  border: 1px solid var(--color-mediumGrey);
   font-size: 1em;
   transition: all 0.2s ease-out 0s;
   display: block;
   width: 100%;
-  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 
   &:focus {
     border-color: var(--color-primary);
@@ -219,23 +218,23 @@ textarea {
 
 [type='checkbox'],
 [type='radio'] {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.375rem;
+  height: 1.375rem;
   vertical-align: middle;
   position: relative;
   bottom: 2px;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin: 0 0.5rem;
 }
 
-select {
+select,
+datalist + input {
   appearance: none;
-  background: var(--color-field) no-repeat 100%;
+  background: no-repeat 99%;
   background-size: 1.25ex;
   background-origin: content-box;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='64' fill='%23747681'><polygon points='0,0 80,0 40,64'/></svg>");
 }
 
 ::placeholder {
-  color: var(--color-greyMedium);
+  color: var(--color-mediumGrey);
 }
