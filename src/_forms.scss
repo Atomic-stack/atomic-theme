@@ -10,7 +10,12 @@ textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+  margin: 0.25rem 0; /* 2 */
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
 }
 
 /**
@@ -144,11 +149,11 @@ button {
 
   &:has(.icon) {
     display: inline-flex;
-    align-items: center;
+    align-items: baseline;
+  }
 
-    .icon {
-      margin-left: 0.5rem;
-    }
+  .icon {
+    margin-left: 0.5rem;
   }
 
   &.icon-only {
