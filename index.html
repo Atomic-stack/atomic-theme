@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <link rel="stylesheet" href="/dist/index.css" />
+    <link rel="stylesheet" href="/dist/layout.css" />
   </head>
   <body>
     <nav class="nav">
@@ -60,13 +61,13 @@
         <pre>&lt;link rel="stylesheet" href="..." type="text/css"&gt;</pre>
       </li>
       <li>
-        <p>Link the downloaded file on your html <code>&lt;head&gt;</code></p>
+        <p>Link the downloaded file on your html <code>&lt;head&gt;</code>.</p>
         <pre>&lt;link rel="stylesheet" href="styles.css" type="text/css"&gt;</pre>
       </li>
     </ol>
 
     <section id="form">
-      <h4>Forms</h4>
+      <h3>Forms</h3>
 
       <form>
         <fieldset>
@@ -154,11 +155,6 @@
         </label>
 
         <label>
-          Month
-          <input type="month" placeholder="Month" />
-        </label>
-
-        <label>
           Datetime-local input
           <input type="datetime-local" placeholder="Datetime local" />
         </label>
@@ -170,9 +166,11 @@
       </fieldset>
     </section>
 
-    <h3>Select</h3>
-    <label
-      >Cars
+    <h3 id="select">
+      <a href="#select">Selects</a>
+    </h3>
+    <label>
+      Cars
       <select name="Cars" id="cars">
         <optgroup label="SUV">
           <option value="">Porsche Cayenne</option>
@@ -266,26 +264,9 @@
       </p>
     </section>
 
-    <section>
-      <h3>Menu</h3>
-
-      <h4>Toolbar</h4>
-      <menu type="toolbar">
-        <li class="new">New</li>
-        <li class="open">Open</li>
-        <li class="save">Save</li>
-        <li class="quit">Quit</li>
-      </menu>
-
-      <h4>Popup</h4>
-      <menu type="popup">
-        <li class="new">New</li>
-        <li class="open">Open</li>
-        <li class="save">Save</li>
-        <li class="quit">Quit</li>
-      </menu>
-    </section>
-
+    <h3 id="tables">
+      <a href="#tables">Tables</a>
+    </h3>
     <table>
       <caption>
         Table Caption
@@ -339,6 +320,16 @@
         </tr>
       </tbody>
     </table>
+
+    <section>
+      <h3>Menu</h3>
+      <menu type="toolbar">
+        <li class="new">New</li>
+        <li class="open">Open</li>
+        <li class="save">Save</li>
+        <li class="quit">Quit</li>
+      </menu>
+    </section>
 
     <h3>Details</h3>
     <details>

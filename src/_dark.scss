@@ -1,11 +1,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #111;
+    --bg-secondary: #222;
     --font-color: #eee;
     --color-primary: #4d4dff;
     --color-field: rgb(41, 41, 41);
     --color-code: #19a974;
-    --bg-secondary-color: #222;
+    --color-greyMedium: #747681;
+    --color-grey: #999;
   }
 
   body {
