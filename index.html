@@ -161,7 +161,7 @@
 
         <label>
           Time
-          <input type="time" placeholder="Time" />
+          <input type="time" />
         </label>
       </fieldset>
     </section>
@@ -218,6 +218,7 @@
         <button class="dark">Dark</button>
         <button class="outline">Outline</button>
         <button class="outline primary">Primary</button>
+        <button class="clear">Clear</button>
       </p>
       <p>
         <button>
@@ -351,9 +352,9 @@
 
     <h3>Dialog</h3>
     <!-- Simple modal dialog containing a form -->
-    <dialog id="dialog">
+    <dialog id="dialog" aria-labelledby="dialogTitle" aria-describedby="dialogDescription">
       <form method="dialog">
-        <label>
+        <label id="dialogTitle">
           Favorite animal
           <select>
             <option value="default">Choose…</option>

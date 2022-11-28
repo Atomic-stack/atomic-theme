@@ -27,31 +27,28 @@ Use a better box model (opinionated).
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  width: 8px;
+  height: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: var(--color-grey);
+  background: var(--color-darkGrey);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-color);
 }
 
 /**
 1. Correct the line height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size (opinionated).
 */
 html {
   font-family: var(--font-family-sans);
   font-size: 1rem;
   line-height: 1.75;
   -webkit-text-size-adjust: 100%; /* 2 */
-  -moz-tab-size: 4; /* 3 */
-  tab-size: 4; /* 3 */
 }
 
 body {
@@ -61,17 +58,6 @@ body {
   max-width: 70ch;
   margin: auto;
   padding: 1em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.25;
-  margin: 2em 0 1em;
-  letter-spacing: -0.025em;
 }
 
 a {
@@ -247,4 +233,7 @@ dialog {
   border-color: transparent;
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   padding: 1rem;
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
 }
