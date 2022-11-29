@@ -1,6 +1,7 @@
 /**
 1. Change the font styles in all browsers.
 2. Remove the margin in Firefox and Safari.
+3. Add focus state outline.
 */
 button,
 input,
@@ -11,6 +12,17 @@ textarea {
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0.25rem 0; /* 2 */
+  /* 3 */
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
 }
 
 label {
@@ -59,10 +71,6 @@ fieldset {
 Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
 */
 legend {
-  color: var(--color-grey);
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1rem;
   padding: 0;
 }
 
@@ -100,9 +108,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 }
 
 /* BUTTONS */
-button,
-[type='reset'],
-[type='submit'] {
+button {
   background: var(--color-lightGrey);
   border-radius: 0.25rem;
   border-color: transparent;
@@ -111,16 +117,63 @@ button,
   cursor: pointer;
   display: inline-block;
   font-size: inherit;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   text-align: center;
   text-decoration: none;
   transition: opacity 0.2s ease;
   transform: scale(1);
+  z-index: 1; /* hightlight from other button's border when grouped */
 
   &:active {
     transform: scale(0.98);
+  }
+
+  &.primary,
+  &.secondary,
+  &.dark {
+    color: #fff;
+    background-color: #000;
+    background-color: var(--color-primary);
+  }
+  &.secondary {
+    background-color: var(--color-grey);
+  }
+
+  &.dark {
+    background-color: var(--color-darkGrey);
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 1px solid var(--color-grey);
+    color: inherit;
+
+    &.primary {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  }
+
+  &.clear {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+  }
+
+  &:has(.icon) {
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+
+  &.icon-only {
+    padding: 1rem;
   }
 }
 
@@ -139,63 +192,6 @@ button:hover,
   }
 }
 
-button {
-  &:disabled,
-  &:disabled:hover {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-
-  &:has(.icon) {
-    display: inline-flex;
-    align-items: baseline;
-  }
-
-  .icon {
-    margin-left: 0.5rem;
-  }
-
-  &.icon-only {
-    padding: 1rem;
-  }
-}
-
-[disabled],
-input:disabled,
-input:disabled:hover {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-button.primary,
-button.secondary,
-button.dark,
-[type='submit'] {
-  color: #fff;
-  z-index: 1; /* hightlight from other button's border when grouped */
-  background-color: #000;
-  background-color: var(--color-primary);
-}
-
-button.secondary {
-  background-color: var(--color-grey);
-}
-
-button.dark {
-  background-color: var(--color-darkGrey);
-}
-
-button.outline {
-  background-color: transparent;
-  border: 1px solid var(--color-grey);
-  color: var(--color-grey);
-
-  &.primary {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-}
-
 /* Inputs */
 input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']),
 select,
@@ -208,31 +204,25 @@ textarea {
   transition: all 0.2s ease-out 0s;
   display: block;
   width: 100%;
-
-  &:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 1px var(--color-primary);
-    outline: none;
-  }
 }
 
 [type='checkbox'],
 [type='radio'] {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.25em;
+  height: 1.25em;
   vertical-align: middle;
   position: relative;
   bottom: 2px;
-  margin: 0 0.5rem;
+  margin: 0 0.25rem;
 }
 
 select,
 datalist + input {
   appearance: none;
-  background: no-repeat 99%;
-  background-size: 1.25ex;
+  background: no-repeat 100%;
+  background-size: 1.5em 1.5em;
   background-origin: content-box;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='64' fill='%23747681'><polygon points='0,0 80,0 40,64'/></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'><path stroke='%23747681' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/></svg>");
 }
 
 ::placeholder {
