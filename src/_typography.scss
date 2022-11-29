@@ -1,0 +1,87 @@
+// font-weight
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@for $w from 1 through 9 {
+  .fw#{$w * 100} {
+    font-weight: $w * 100;
+  }
+}
+
+// text-decoration
+.strike,
+.line-through {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+// text-overflow
+.ellipsis {
+  text-overflow: ellipsis;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  @extend .ellipsis;
+  @extend .nowrap;
+  overflow: hidden;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-top {
+  vertical-align: top;
+}
