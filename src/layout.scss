@@ -1,10 +1,4 @@
-:root {
-  --space-0: 0;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-}
+$spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 /* Margins */
 .m0 {
@@ -39,33 +33,33 @@
 
 @for $i from 1 through 4 {
   .m#{$i} {
-    margin: var(--space-#{$i});
+    margin: nth($spaces, $i);
   }
 
   .mt#{$i} {
-    margin-top: var(--space-#{$i});
+    margin-top: nth($spaces, $i);
   }
 
   .mr#{$i} {
-    margin-right: var(--space-#{$i});
+    margin-right: nth($spaces, $i);
   }
 
   .mb#{$i} {
-    margin-bottom: var(--space-#{$i});
+    margin-bottom: nth($spaces, $i);
   }
 
   .ml#{$i} {
-    margin-left: var(--space-#{$i});
+    margin-left: nth($spaces, $i);
   }
 
   .mx#{$i} {
-    margin-left: var(--space-#{$i});
-    margin-right: var(--space-#{$i});
+    margin-left: nth($spaces, $i);
+    margin-right: nth($spaces, $i);
   }
 
   .my#{$i} {
-    margin-top: var(--space-#{$i});
-    margin-bottom: var(--space-#{$i});
+    margin-top: nth($spaces, $i);
+    margin-bottom: nth($spaces, $i);
   }
 }
 
@@ -102,33 +96,33 @@
 
 @for $i from 1 through 4 {
   .p#{$i} {
-    padding: var(--space-#{$i});
+    padding: nth($spaces, $i);
   }
 
   .pt#{$i} {
-    padding-top: var(--space-#{$i});
+    padding-top: nth($spaces, $i);
   }
 
   .pr#{$i} {
-    padding-right: var(--space-#{$i});
+    padding-right: nth($spaces, $i);
   }
 
   .pb#{$i} {
-    padding-bottom: var(--space-#{$i});
+    padding-bottom: nth($spaces, $i);
   }
 
   .pl#{$i} {
-    padding-left: var(--space-#{$i});
+    padding-left: nth($spaces, $i);
   }
 
   .px#{$i} {
-    padding-left: var(--space-#{$i});
-    padding-right: var(--space-#{$i});
+    padding-left: nth($spaces, $i);
+    padding-right: nth($spaces, $i);
   }
 
   .py#{$i} {
-    padding-top: var(--space-#{$i});
-    padding-bottom: var(--space-#{$i});
+    padding-top: nth($spaces, $i);
+    padding-bottom: nth($spaces, $i);
   }
 }
 
@@ -163,18 +157,19 @@
   border-right-width: 1px;
 }
 
-@for $i from 0 through 4 {
+.radius-0 {
+  border-radius: 0;
+}
+
+@for $i from 1 through 4 {
   .radius-#{$i} {
-    border-radius: var(--space-#{$i});
+    border-radius: nth($spaces, $i);
   }
 }
 
 /* Display */
-.hide {
-  display: none;
-}
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .block {
@@ -216,6 +211,10 @@
 
 .flex-none {
   flex: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-row-reverse {
@@ -272,8 +271,29 @@
   justify-content: space-around;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
+/* align-content */
+.content-start {
+  align-content: flex-start;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.content-stretch {
+  align-content: stretch;
 }
 
 /* Grid layout */
@@ -371,23 +391,6 @@
 
 .shadow-inset {
   box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-}
-
-/* Alignment */
-.align-bottom {
-  vertical-align: bottom;
-}
-
-.align-baseline {
-  vertical-align: baseline;
-}
-
-.align-middle {
-  vertical-align: middle;
-}
-
-.align-top {
-  vertical-align: top;
 }
 
 /* Opacity */
