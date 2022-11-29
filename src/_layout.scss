@@ -26,6 +26,11 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   margin-right: 0;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my0 {
   margin-top: 0;
   margin-bottom: 0;
@@ -172,6 +177,18 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   display: none;
 }
 
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.collapse {
+  visibility: collapse;
+}
+
 .block {
   display: block;
 }
@@ -186,6 +203,35 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .table {
   display: table;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+/* Overflows */
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 /* Flexbox */
@@ -297,6 +343,10 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 }
 
 /* Grid layout */
+.grid {
+  display: grid;
+}
+
 .grid-cols-none {
   grid-template-columns: none;
 }
@@ -317,6 +367,12 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   }
 }
 
+@for $i from 1 through 6 {
+  .gap-#{$i} {
+    gap: nth($spaces, $i);
+  }
+}
+
 /* Widths */
 .w1 {
   width: 100%;
@@ -325,6 +381,10 @@ $spaces: 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 @for $i from 0 through 10 {
   .w#{$i * 10} {
     width: $i * 10%;
+  }
+
+  .mw#{$i * 10} {
+    max-width: $i * 10%;
   }
 }
 

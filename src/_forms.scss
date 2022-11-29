@@ -126,6 +126,10 @@ button {
   transform: scale(1);
   z-index: 1; /* hightlight from other button's border when grouped */
 
+  &:hover {
+    opacity: 0.7;
+  }
+
   &:active {
     transform: scale(0.98);
   }
@@ -175,13 +179,6 @@ button {
   &.icon-only {
     padding: 1rem;
   }
-}
-
-a:hover,
-button:hover,
-[type='reset']:hover,
-[type='submit']:hover {
-  opacity: 0.7;
 }
 
 .grouped {
