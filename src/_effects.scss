@@ -1,0 +1,202 @@
+/* box-shadow */
+.shadow-none {
+  box-shadow: none;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.shadow-1 {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.shadow-2 {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.shadow-3 {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shadow-4 {
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.shadow-inset {
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+// drop-shadow
+.drop-shadow {
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+}
+
+.drop-shadow-1 {
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+.drop-shadow-2 {
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+}
+
+.drop-shadow-3 {
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.drop-shadow-4 {
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
+.drop-shadow-none {
+  filter: drop-shadow(0 0 #0000);
+}
+
+/* opacity */
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-50 {
+  opacity: 50;
+}
+
+// overlays
+@mixin overlay-gradient($side: bottom, $url: '') {
+  @if $url != '' {
+    background-image: linear-gradient(to $side, var(--gradient-stops)), url($url);
+  } @else {
+    background-image: linear-gradient(to $side, var(--gradient-stops));
+  }
+}
+
+.overlay-semi {
+  --gradient-stops: rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5);
+  @include overlay-gradient(bottom);
+}
+
+.overlay-bottom {
+  --gradient-stops: transparent 50%, rgba(17, 17, 17, 0.9) 100%;
+  @include overlay-gradient(bottom);
+}
+
+.overlay-top {
+  --gradient-stops: transparent 50%, rgba(17, 17, 17, 0.9) 100%;
+  @include overlay-gradient(top);
+}
+
+.bg-auto {
+  background-size: auto;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+// background position
+.bg-center {
+  background-position: center;
+}
+
+.bg-bottom {
+  background-position: bottom;
+}
+
+.bg-left {
+  background-position: left;
+}
+
+.bg-bottom-left {
+  background-position: bottom left;
+}
+
+.bg-bottom-right {
+  background-position: bottom right;
+}
+
+.bg-right {
+  background-position: right;
+}
+
+.bg-repeat-x {
+  background-repeat: repeat-x;
+}
+
+.bg-repeat-y {
+  background-repeat: repeat-y;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+// filters
+.blur {
+  filter: blur(4px);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+
+.brighten {
+  filter: brightness(1.25);
+}
+
+.saturate {
+  filter: saturate(1.25);
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.contrast {
+  filter: contrast(1.25);
+}
+
+// transitions
+@mixin transition($property: all, $duration: 150ms) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: ease-in-out;
+}
+
+.transition-none {
+  transition-property: none;
+}
+
+.transition-all {
+  @include transition();
+}
+
+.transition {
+  @include transition(
+    color background-color border-color text-decoration-color fill stroke opacity box-shadow
+      transform filter backdrop-filter
+  );
+}
+
+.transition-colors {
+  @include transition(color background-color border-color text-decoration-color fill stroke);
+}
+
+.transition-opacity {
+  @include transition(opacity);
+}
+
+.transition-shadow {
+  @include transition(box-shadow);
+}
+
+.transition-transform {
+  @include transition(transform);
+}

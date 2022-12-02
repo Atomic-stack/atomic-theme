@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark light" />
     <link rel="stylesheet" href="/dist/index.css" />
   </head>
-  <body>
+  <body class="container">
     <nav class="nav">
       <div class="nav-start">
         <a class="active">Link 1</a>
@@ -22,6 +22,7 @@
         <a>Link 4</a>
       </div>
     </nav>
+
     <h1>A minimal CSS theme</h1>
     <p>
       Just include this theme on any website and go from outdated to fresh and modern looking page,
@@ -64,6 +65,86 @@
         <pre>&lt;link rel="stylesheet" href="styles.css" type="text/css"&gt;</pre>
       </li>
     </ol>
+
+    <h3 id="Typography">
+      <a href="#Typography">Typography</a>
+    </h3>
+    <h1>This is a heading</h1>
+    <h2>This is a heading</h2>
+    <h3>This is a heading</h3>
+    <h4>This is a heading</h4>
+    <h5>This is a heading</h5>
+    <h6>This is a heading</h6>
+
+    <h3 id="Backgrounds">
+      <a href="#Backgrounds">Backgrounds</a>
+    </h3>
+    <div class="flex">
+      <div
+        class="m4 bg-contain bg-center bg-no-repeat w-50 h-6 shadow-4"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center w-50 h-6"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div
+        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        ">
+        <div class="w-100 h-100 overlay-top"></div>
+      </div>
+      <div
+        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        ">
+        <div class="w-100 h-100 overlay-bottom"></div>
+      </div>
+      <div
+        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        ">
+        <div class="w-100 h-100 overlay-semi transition-opacity hover:opacity-0"></div>
+      </div>
+      <div
+        class="m4 bg-cover bg-center h-6 saturate"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center h-6 contrast"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center h-6 blur"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center h-6 brighten"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center h-6 grayscale"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+      <div
+        class="m4 bg-cover bg-center h-6 invert"
+        style="
+          background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
+        "></div>
+    </div>
 
     <section id="form">
       <h3 id="forms">
@@ -121,6 +202,7 @@
 
         <label>
           Email
+          <div class="hint">This is a form hint</div>
           <input type="email" placeholder="your@email.com" />
         </label>
 
@@ -195,6 +277,7 @@
     <h3>Datalist</h3>
     <label for="browser"
       >Choose your browser
+      <div class="hint">Type to search</div>
       <datalist id="browsersList">
         <label for="fallback">Or pick a browser</label>
         <select name="browser" id="fallback">
