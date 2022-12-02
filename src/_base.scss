@@ -4,7 +4,7 @@
   --color-primary: #3333ee;
   --color-grey: #747681;
   --color-lightGrey: #d2d6dd;
-  --color-mediumGrey: #ccc;
+  --color-mediumGrey: #aaa;
   --color-darkGrey: rgb(41, 41, 41);
   --color-code: #905;
   --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -34,7 +34,7 @@ Use a better box model (opinionated).
 
 *::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: var(--color-darkGrey);
+  background: var(--color-mediumGrey);
 }
 
 *::-webkit-scrollbar-track {
