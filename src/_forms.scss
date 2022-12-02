@@ -225,3 +225,8 @@ datalist + input {
 ::placeholder {
   color: var(--color-mediumGrey);
 }
+
+.hint {
+  font-size: 75%;
+  color: var(--color-grey);
+}
