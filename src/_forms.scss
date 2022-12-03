@@ -184,13 +184,15 @@ button {
 .grouped {
   display: flex;
 
-  & > *:not(:last-child) {
-    margin-right: 1rem;
+  & > * + * {
+    margin-left: 1rem;
   }
 }
 
 /* Inputs */
-input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']),
+input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not(
+    [type='submit']
+  ):not([type='button']),
 select,
 textarea {
   font-family: inherit;
@@ -227,6 +229,6 @@ datalist + input {
 }
 
 .hint {
-  font-size: 75%;
+  font-size: 80%;
   color: var(--color-grey);
 }

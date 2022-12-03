@@ -1,19 +1,27 @@
-@mixin header($size, $line: 1.25) {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+@mixin header($size, $line: 1.2) {
   font-size: $size;
   line-height: $line;
-  font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 h1,
 .h1 {
-  @include header(2.5rem, 1.2);
-  letter-spacing: -0.02em;
+  @include header(2.5rem, 1.1);
 }
 
 h2,
 .h2 {
-  @include header(2rem);
+  @include header(2rem, 1.2);
 }
 
 h3,
@@ -37,95 +45,51 @@ h6,
 }
 
 // font-weight
-.bold {
-  font-weight: bold;
+.font-bold {
+  font-weight: 700;
 }
 
-.italic {
+.font-italic {
   font-style: italic;
 }
 
-@for $w from 1 through 9 {
-  .fw#{$w * 100} {
-    font-weight: $w * 100;
-  }
+.font-light {
+  font-weight: 300;
 }
 
-// text-decoration
-.strike,
-.line-through {
-  text-decoration: line-through;
+.font-regular {
+  font-weight: 400;
 }
 
-.underline {
-  text-decoration: underline;
+.font-medium {
+  font-weight: 500;
 }
 
-.overline {
-  text-decoration: overline;
-}
-
-.no-underline {
-  text-decoration: none;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
+.font-black {
+  font-weight: 800;
 }
 
 // text-overflow
 .ellipsis {
   text-overflow: ellipsis;
-}
-
-.nowrap {
   white-space: nowrap;
-}
-
-.truncate {
-  @extend .ellipsis;
-  @extend .nowrap;
   overflow: hidden;
 }
 
 // text-align
-.align-left {
+.text-left {
   text-align: left;
 }
 
-.align-center {
+.text-center {
   text-align: center;
 }
 
-.align-right {
+.text-right {
   text-align: right;
-}
-
-.align-justify {
-  text-align: justify;
-}
-
-.align-bottom {
-  vertical-align: bottom;
-}
-
-.align-baseline {
-  vertical-align: baseline;
-}
-
-.align-middle {
-  vertical-align: middle;
-}
-
-.align-top {
-  vertical-align: top;
 }
 
 // text-shadow
 .text-shadow {
-  text-shadow: 2px 4px 3px #111;
+  text-shadow: 1px 1px 2px #111;
 }

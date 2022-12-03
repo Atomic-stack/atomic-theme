@@ -85,52 +85,14 @@
   @include overlay-gradient(top);
 }
 
-.bg-auto {
-  background-size: auto;
-}
-
 .bg-cover {
   background-size: cover;
+  background-position: center;
 }
 
 .bg-contain {
   background-size: contain;
-}
-
-// background position
-.bg-center {
   background-position: center;
-}
-
-.bg-bottom {
-  background-position: bottom;
-}
-
-.bg-left {
-  background-position: left;
-}
-
-.bg-bottom-left {
-  background-position: bottom left;
-}
-
-.bg-bottom-right {
-  background-position: bottom right;
-}
-
-.bg-right {
-  background-position: right;
-}
-
-.bg-repeat-x {
-  background-repeat: repeat-x;
-}
-
-.bg-repeat-y {
-  background-repeat: repeat-y;
-}
-
-.bg-no-repeat {
   background-repeat: no-repeat;
 }
 
@@ -141,26 +103,6 @@
 
 .backdrop-blur {
   backdrop-filter: blur(8px);
-}
-
-.brighten {
-  filter: brightness(1.25);
-}
-
-.saturate {
-  filter: saturate(1.25);
-}
-
-.invert {
-  filter: invert(100%);
-}
-
-.grayscale {
-  filter: grayscale(100%);
-}
-
-.contrast {
-  filter: contrast(1.25);
 }
 
 // transitions
@@ -174,15 +116,8 @@
   transition-property: none;
 }
 
-.transition-all {
-  @include transition();
-}
-
 .transition {
-  @include transition(
-    color background-color border-color text-decoration-color fill stroke opacity box-shadow
-      transform filter backdrop-filter
-  );
+  @include transition(all);
 }
 
 .transition-colors {
