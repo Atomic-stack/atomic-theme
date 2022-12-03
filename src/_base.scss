@@ -49,6 +49,7 @@ html {
   font-family: var(--font-family-sans);
   font-size: 1.125rem;
   line-height: 1.6;
+  height: 100%;
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -166,6 +167,7 @@ Images are block level
 */
 img,
 svg,
+picture,
 video,
 canvas,
 audio,
@@ -179,6 +181,7 @@ object {
 Images width constrained
 */
 img,
+picture,
 video {
   max-width: 100%;
   height: auto;
