@@ -7,7 +7,7 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   padding: 1em;
 }
 
-.list-reset {
+.list-none {
   list-style: none;
   padding-left: 0;
   margin-inline-start: 0;
@@ -96,32 +96,12 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   display: none;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
 .block {
   display: block;
 }
 
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
-}
-
-.table {
-  display: table;
-}
-
-.table-cell {
-  display: table-cell;
 }
 
 /* Overflows */
@@ -221,8 +201,10 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   display: grid;
 }
 
-.grid-cols-none {
-  grid-template-columns: none;
+@for $i from 1 through 6 {
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat($i, minmax(0, 1fr));
+  }
 }
 
 @for $i from 1 through 6 {
@@ -231,17 +213,7 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   }
 }
 
-.grid-rows-none {
-  grid-template-rows: none;
-}
-
-@for $i from 1 through 6 {
-  .grid-rows-#{$i} {
-    grid-template-rows: repeat($i, minmax(0, 1fr));
-  }
-}
-
-@for $i from 1 through 6 {
+@for $i from 1 through 5 {
   .gap-#{$i} {
     gap: nth($spaces, $i + 1);
   }
@@ -260,24 +232,8 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   width: 50%;
 }
 
-.w-75 {
-  width: 75%;
-}
-
 .w-100 {
   width: 100%;
-}
-
-.max-w-0 {
-  max-width: 0;
-}
-
-.max-w-50 {
-  max-width: 50%;
-}
-
-.max-w-100 {
-  max-width: 100%;
 }
 
 /* height */
@@ -289,18 +245,10 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   height: 100%;
 }
 
-@for $i from 1 through 12 {
+@for $i from 1 through 8 {
   .h-#{$i} {
     height: $i * 2rem;
   }
-}
-
-.max-h-0 {
-  max-height: 0;
-}
-
-.max-h-100 {
-  max-height: 100%;
 }
 
 /* position */
@@ -314,16 +262,4 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .fixed {
   position: fixed;
-}
-
-.static {
-  position: static;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
-.z-1 {
-  z-index: 1;
 }

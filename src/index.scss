@@ -1,8 +1,11 @@
+// theme
 @import '_base';
 @import '_dark';
-@import '_forms';
-@import '_nav';
-@import '_card';
 @import '_typography';
+// components
+@import '_nav';
+@import '_forms';
+@import '_card';
+// utils
 @import '_layout';
 @import '_effects';
