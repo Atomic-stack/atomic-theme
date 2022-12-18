@@ -1,23 +1,23 @@
 {
-  "name": "fastpage",
+  "name": "atomic-theme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.css",
   "scripts": {
-    "sass": "sass --style compressed src:dist",
-    "sass:watch": "sass --watch --style compressed src:dist"
+    "build": "sass --style compressed src:dist",
+    "watch": "sass --watch --style compressed src:dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adrian2x/fastpage.git"
+    "url": "git+https://github.com/adrian2x/atomic-theme.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adrian2x/fastpage/issues"
+    "url": "https://github.com/adrian2x/atomic-theme/issues"
   },
-  "homepage": "https://github.com/adrian2x/fastpage#readme",
+  "homepage": "https://github.com/adrian2x/atomic-theme#readme",
   "devDependencies": {
     "sass": "^1.56.1"
   }
