@@ -190,9 +190,18 @@ button {
 }
 
 /* Inputs */
-input:not([type='color']):not([type='checkbox']):not([type='radio']):not([type='reset']):not(
-    [type='submit']
-  ):not([type='button']),
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+input[type='url'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='search'],
+input[type='tel'],
 select,
 textarea {
   font-family: inherit;
