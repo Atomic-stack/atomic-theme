@@ -5,7 +5,8 @@
   "main": "dist/index.css",
   "scripts": {
     "build": "sass --style compressed src:dist",
-    "watch": "sass --watch --style compressed src:dist"
+    "watch": "sass --watch --style compressed src:dist",
+    "deploy": "npm publish --access public"
   },
   "repository": {
     "type": "git",
