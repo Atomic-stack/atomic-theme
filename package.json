@@ -1,6 +1,6 @@
 {
-  "name": "atomic-theme",
-  "version": "1.0.1",
+  "name": "@atomic-stack/theme",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.css",
   "scripts": {
@@ -11,9 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/adrian2x/atomic-theme.git"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/adrian2x/atomic-theme/issues"
   },

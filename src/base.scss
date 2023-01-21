@@ -1,16 +1,4 @@
-:root {
-  --bg-color: #fff;
-  --font-color: #222;
-  --color-primary: #3333ee;
-  --color-grey: #747681;
-  --color-lightGrey: #d2d6dd;
-  --color-mediumGrey: #aaa;
-  --color-darkGrey: rgb(41, 41, 41);
-  --color-code: #905;
-  --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji';
-  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-}
+@import '_variables';
 
 /**
 Use a better box model (opinionated).

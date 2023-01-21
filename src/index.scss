@@ -1,11 +1,9 @@
 // theme
-@import '_base';
-@import '_dark';
-@import '_typography';
+@import 'base';
+@import 'typography';
 // components
-@import '_nav';
-@import '_forms';
-@import '_card';
+@import 'nav';
+@import 'forms';
+@import 'card';
 // utils
-@import '_layout';
-@import '_effects';
+@import 'cssutils';

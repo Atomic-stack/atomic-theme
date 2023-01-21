@@ -92,7 +92,8 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 }
 
 /* Display */
-.hidden {
+.hidden,
+[hidden] {
   display: none !important;
 }
 
@@ -262,4 +263,45 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .fixed {
   position: fixed;
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .sm-show {
+    display: initial !important;
+  }
+
+  .sm-hide {
+    display: none;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 768px) {
+  .sm-show {
+    display: none;
+  }
+
+  .md-show {
+    display: initial !important;
+  }
+
+  .md-hide {
+    display: none;
+  }
+}
+
+/* Desktops and laptops */
+@media only screen and (min-width: 1224px) {
+  .sm-show {
+    display: none;
+  }
+
+  .md-show {
+    display: none;
+  }
+
+  .lg-show {
+    display: initial !important;
+  }
 }
