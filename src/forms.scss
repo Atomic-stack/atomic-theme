@@ -167,6 +167,10 @@ button {
     color: inherit;
   }
 
+  .icon {
+    margin-right: 0.5rem;
+  }
+
   &:has(.icon) {
     display: inline-flex;
     align-items: baseline;

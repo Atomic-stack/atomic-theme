@@ -1,24 +1,45 @@
 {
   "name": "@atomic-stack/theme",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A tiny modular CSS framework with a modern look, dark theme support, and utilities to build modern websites, faster.",
+  "files": [
+    "dist/*"
+  ],
   "main": "dist/index.css",
   "scripts": {
     "build": "sass --style compressed src:dist",
-    "watch": "sass --watch --style compressed src:dist",
-    "deploy": "npm publish --access public"
+    "watch": "sass --watch src:dist",
+    "deploy": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adrian2x/atomic-theme.git"
+    "url": "https://github.com/Atomic-stack/atomic-theme.git"
   },
-  "author": "",
+  "author": "Adrian Cruz <kangoonie@gmail.com> (https://github.com/adrian2x)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adrian2x/atomic-theme/issues"
+    "url": "https://github.com/Atomic-stack/atomic-theme/issues"
   },
-  "homepage": "https://github.com/adrian2x/atomic-theme#readme",
+  "homepage": "https://github.com/Atomic-stack/atomic-theme#readme",
   "devDependencies": {
     "sass": "^1.56.1"
-  }
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/adriancruz"
+  },
+  "browserslist": [
+    ">0.25%",
+    "not ie 11",
+    "not op_mini all"
+  ]
 }
