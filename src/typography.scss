@@ -9,14 +9,14 @@ h6 {
   margin-bottom: 1rem;
 }
 
-@mixin header($size, $line: 1) {
+@mixin header($size, $line: 1.2) {
   font-size: $size;
   line-height: $line;
 }
 
 h1,
 .h1 {
-  @include header(2.5rem, 1);
+  @include header(2.5rem, 1.2);
 }
 
 h2,
