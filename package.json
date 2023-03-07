@@ -7,15 +7,16 @@
   ],
   "main": "dist/index.css",
   "scripts": {
-    "build": "sass --style compressed src:dist",
+    "build": "rm -rf dist && sass --no-source-map --style=compressed src:dist",
     "watch": "sass --watch src:dist",
-    "deploy": "npm run build && npm publish --access public"
+    "deploy": "npm publish --access public",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Atomic-stack/atomic-theme.git"
   },
-  "author": "Adrian Cruz <kangoonie@gmail.com> (https://github.com/adrian2x)",
+  "author": "Adrian Cruz",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Atomic-stack/atomic-theme/issues"
@@ -27,6 +28,7 @@
   "keywords": [
     "css",
     "sass",
+    "atomic",
     "mobile-first",
     "responsive",
     "front-end",
