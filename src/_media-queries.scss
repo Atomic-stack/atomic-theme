@@ -1,0 +1,20 @@
+/* Small screens */
+@mixin sm-screen() {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+/* Medium screens */
+@mixin md-screen() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+/* Desktops and laptops */
+@mixin lg-screen() {
+  @media (min-width: 1224px) {
+    @content;
+  }
+}

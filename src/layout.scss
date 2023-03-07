@@ -1,3 +1,4 @@
+@import "media-queries";
 $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .container {
@@ -92,6 +93,14 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 }
 
 /* Display */
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 .hidden {
   display: none !important;
 }
@@ -107,6 +116,14 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 /* Overflows */
 .overflow-auto {
   overflow: auto;
+}
+
+.scroll-x {
+  overflow-x: auto;
+}
+
+.scroll-y {
+  overflow-y: auto;
 }
 
 .overflow-hidden {
@@ -201,21 +218,117 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   display: grid;
 }
 
-@for $i from 1 through 6 {
-  .grid-rows-#{$i} {
-    grid-template-rows: repeat($i, minmax(0, 1fr));
+@mixin rows($i, $size: '') {
+  @if $size != '' {
+    .#{$size}-grid-rows-#{$i} {
+      grid-template-rows: repeat($i, minmax(0, 1fr));
+    }
+  } @else {
+    .grid-rows-#{$i} {
+      grid-template-rows: repeat($i, minmax(0, 1fr));
+    }
+  }
+}
+
+@mixin columns($i, $size: '') {
+  @if $size != '' {
+    .#{$size}-grid-cols-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  } @else {
+    .grid-cols-#{$i} {
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+    }
+  }
+}
+
+@mixin gap($i, $size: '') {
+  @if $size != '' {
+    .#{$size}-gap-#{$i} {
+      gap: nth($spaces, $i + 1);
+    }
+  } @else {
+    .gap-#{$i} {
+      gap: nth($spaces, $i + 1);
+    }
   }
 }
 
 @for $i from 1 through 6 {
-  .grid-cols-#{$i} {
-    grid-template-columns: repeat($i, minmax(0, 1fr));
+  @include rows($i);
+  @include columns($i);
+  @if $i < 6 {
+    @include gap($i);
   }
+}
+
+@for $i from 1 through 6 {
+  @include columns($i)
 }
 
 @for $i from 1 through 5 {
-  .gap-#{$i} {
-    gap: nth($spaces, $i + 1);
+  @include gap($i)
+}
+
+@include sm-screen() {
+  .sm-show {
+    display: block;
+  }
+
+  .sm-hide {
+    display: none;
+  }
+
+  @for $i from 1 through 6 {
+    @include rows($i, 'sm');
+    @include columns($i, 'sm');
+    @if $i < 6 {
+      @include gap($i, 'sm');
+    }
+  }
+}
+
+@include md-screen() {
+  .sm-show {
+    display: none;
+  }
+
+  .md-show {
+    display: block;
+  }
+
+  .md-hide {
+    display: none;
+  }
+
+  @for $i from 1 through 6 {
+    @include rows($i, 'md');
+    @include columns($i, 'md');
+    @if $i < 6 {
+      @include gap($i, 'md');
+    }
+  }
+}
+
+@include lg-screen() {
+  .sm-show {
+    display: none;
+  }
+
+  .md-show {
+    display: none;
+  }
+
+  .lg-show {
+    display: block;
+  }
+
+  @for $i from 1 through 6 {
+    @include rows($i, 'lg');
+    @include columns($i, 'lg');
+    @if $i < 6 {
+      @include gap($i, 'lg');
+    }
   }
 }
 
@@ -230,6 +343,10 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .w-50 {
   width: 50%;
+}
+
+.w-75 {
+  width: 75%;
 }
 
 .w-100 {
@@ -262,45 +379,4 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .fixed {
   position: fixed;
-}
-
-/* Small screens */
-@media (max-width: 640px) {
-  .sm-show {
-    display: initial !important;
-  }
-
-  .sm-hide {
-    display: none;
-  }
-}
-
-/* Medium screens */
-@media only screen and (min-width: 768px) {
-  .sm-show {
-    display: none;
-  }
-
-  .md-show {
-    display: initial !important;
-  }
-
-  .md-hide {
-    display: none;
-  }
-}
-
-/* Desktops and laptops */
-@media only screen and (min-width: 1224px) {
-  .sm-show {
-    display: none;
-  }
-
-  .md-show {
-    display: none;
-  }
-
-  .lg-show {
-    display: initial !important;
-  }
 }

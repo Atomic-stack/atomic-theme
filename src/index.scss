@@ -1,11 +1,3 @@
-// theme
-@import 'normalize';
-@import 'typography';
-// components
-@import 'nav';
-@import 'forms';
-@import 'card';
-@import 'dialog';
-@import 'tabs';
-// utils
-@import 'cssutils';
+@import 'base';
+@import 'layout';
+@import 'utilities';

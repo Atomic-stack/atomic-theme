@@ -104,26 +104,3 @@
 .backdrop-blur {
   backdrop-filter: blur(8px);
 }
-
-// transitions
-@mixin transition($property: all, $duration: 150ms) {
-  transition-property: $property;
-  transition-duration: $duration;
-  transition-timing-function: ease-in-out;
-}
-
-.transition {
-  @include transition(all);
-}
-
-.transition-colors {
-  @include transition(color background-color border-color text-decoration-color fill stroke);
-}
-
-.transition-opacity {
-  @include transition(opacity);
-}
-
-.transition-shadow {
-  @include transition(box-shadow);
-}
