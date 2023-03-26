@@ -25,6 +25,10 @@ Dark color scheme
     --color-grey: rgba(255, 255, 255, 0.5);
   }
 
+  html {
+    color-scheme: dark;
+  }
+
   body {
     font-weight: 350;
   }
