@@ -1,6 +1,6 @@
 {
   "name": "@atomic-stack/theme",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A tiny modular CSS framework with a modern look, dark theme support, and utilities to build modern websites, faster.",
   "files": [
     "dist/*"
