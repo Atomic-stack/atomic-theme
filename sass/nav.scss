@@ -30,7 +30,7 @@
   justify-content: center;
 }
 
-@include sm-screen() {
+@include small-breakpoint() {
   .nav,
   .nav > .container {
     flex-direction: column;

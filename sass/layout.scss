@@ -1,4 +1,4 @@
-@import "media-queries";
+@import 'media-queries';
 $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .container {
@@ -15,40 +15,49 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 }
 
 /* Margins */
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
+.m-auto { margin: auto }
 
 @for $i from 1 through 5 {
   .m#{$i - 1} {
     margin: nth($spaces, $i);
   }
+}
 
-  .mt#{$i - 1} {
-    margin-top: nth($spaces, $i);
-  }
-
-  .mr#{$i - 1} {
-    margin-right: nth($spaces, $i);
-  }
-
-  .mb#{$i - 1} {
-    margin-bottom: nth($spaces, $i);
-  }
-
-  .ml#{$i - 1} {
-    margin-left: nth($spaces, $i);
-  }
-
+@for $i from 1 through 5 {
   .mx#{$i - 1} {
     margin-left: nth($spaces, $i);
     margin-right: nth($spaces, $i);
   }
+}
 
+@for $i from 1 through 5 {
   .my#{$i - 1} {
     margin-top: nth($spaces, $i);
     margin-bottom: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .mt#{$i - 1} {
+    margin-top: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .mr#{$i - 1} {
+    margin-right: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .mb#{$i - 1} {
+    margin-bottom: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .ml#{$i - 1} {
+    margin-left: nth($spaces, $i);
   }
 }
 
@@ -57,31 +66,43 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   .p#{$i - 1} {
     padding: nth($spaces, $i);
   }
+}
 
-  .pt#{$i - 1} {
-    padding-top: nth($spaces, $i);
-  }
-
-  .pr#{$i - 1} {
-    padding-right: nth($spaces, $i);
-  }
-
-  .pb#{$i - 1} {
-    padding-bottom: nth($spaces, $i);
-  }
-
-  .pl#{$i - 1} {
-    padding-left: nth($spaces, $i);
-  }
-
+@for $i from 1 through 5 {
   .px#{$i - 1} {
     padding-left: nth($spaces, $i);
     padding-right: nth($spaces, $i);
   }
+}
 
+@for $i from 1 through 5 {
   .py#{$i - 1} {
     padding-top: nth($spaces, $i);
     padding-bottom: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .pt#{$i - 1} {
+    padding-top: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .pr#{$i - 1} {
+    padding-right: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .pb#{$i - 1} {
+    padding-bottom: nth($spaces, $i);
+  }
+}
+
+@for $i from 1 through 5 {
+  .pl#{$i - 1} {
+    padding-left: nth($spaces, $i);
   }
 }
 
@@ -263,14 +284,14 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 }
 
 @for $i from 1 through 6 {
-  @include columns($i)
+  @include columns($i);
 }
 
 @for $i from 1 through 5 {
-  @include gap($i)
+  @include gap($i);
 }
 
-@include sm-screen() {
+@include small-breakpoint() {
   .sm-show {
     display: block;
   }
@@ -288,7 +309,7 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   }
 }
 
-@include md-screen() {
+@include medium-breakpoint() {
   .sm-show {
     display: none;
   }
@@ -310,7 +331,7 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
   }
 }
 
-@include lg-screen() {
+@include large-breakpoint() {
   .sm-show {
     display: none;
   }

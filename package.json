@@ -2,13 +2,10 @@
   "name": "@atomic-stack/theme",
   "version": "1.0.3",
   "description": "A tiny modular CSS framework with a modern look, dark theme support, and utilities to build modern websites, faster.",
-  "files": [
-    "dist/*"
-  ],
-  "main": "dist/index.css",
+  "main": "css/index.css",
   "scripts": {
-    "build": "rm -rf dist && sass --no-source-map --style=compressed src:dist",
-    "watch": "sass --watch src:dist",
+    "build": "rm -rf css && sass --no-source-map --style=compressed ./sass:css",
+    "watch": "sass --watch ./sass:css",
     "deploy": "npm publish --access public",
     "prepublishOnly": "npm run build"
   },
@@ -21,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Atomic-stack/atomic-theme/issues"
   },
-  "homepage": "https://github.com/Atomic-stack/atomic-theme#readme",
+  "homepage": "https://atomic-stack.github.io/theme",
   "devDependencies": {
     "sass": "^1.56.1"
   },
@@ -35,10 +32,6 @@
     "framework",
     "web"
   ],
-  "funding": {
-    "type": "patreon",
-    "url": "https://www.patreon.com/adriancruz"
-  },
   "browserslist": [
     ">0.25%",
     "not ie 11",

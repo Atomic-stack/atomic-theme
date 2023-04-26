@@ -1,19 +1,19 @@
 /* Small screens */
-@mixin sm-screen() {
+@mixin small-breakpoint() {
   @media (max-width: 640px) {
     @content;
   }
 }
 
 /* Medium screens */
-@mixin md-screen() {
+@mixin medium-breakpoint() {
   @media (min-width: 768px) {
     @content;
   }
 }
 
 /* Desktops and laptops */
-@mixin lg-screen() {
+@mixin large-breakpoint() {
   @media (min-width: 1224px) {
     @content;
   }

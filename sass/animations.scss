@@ -53,3 +53,33 @@
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
+
+.animate-fade-top {
+  animation: fade-in-top 0.2s ease;
+}
+
+@keyframes fade-in-top {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-bottom {
+  animation: fade-in-bottom 0.2s ease;
+}
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
