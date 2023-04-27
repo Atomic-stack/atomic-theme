@@ -134,6 +134,10 @@ button {
     transform: scale(0.98);
   }
 
+  &.round {
+    border-radius: 20px;
+  }
+
   &.primary,
   &.secondary,
   &.dark {
@@ -168,7 +172,12 @@ button {
   }
 
   .icon {
-    margin-right: 0.5rem;
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+    &:last-child {
+      margin-left: 0.5rem;
+    }
   }
 
   &:has(.icon) {
