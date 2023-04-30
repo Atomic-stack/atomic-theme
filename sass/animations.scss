@@ -54,11 +54,11 @@
   }
 }
 
-.animate-fade-top {
-  animation: fade-in-top 0.2s ease;
+.animate-slide-down {
+  animation: slide-down 0.2s ease;
 }
 
-@keyframes fade-in-top {
+@keyframes slide-down {
   from {
     opacity: 0;
     transform: translateY(-5px);
@@ -69,11 +69,11 @@
   }
 }
 
-.animate-fade-bottom {
-  animation: fade-in-bottom 0.2s ease;
+.animate-slide-up {
+  animation: slide-up 0.2s ease;
 }
 
-@keyframes fade-in-bottom {
+@keyframes slide-up {
   from {
     opacity: 0;
     transform: translateY(5px);

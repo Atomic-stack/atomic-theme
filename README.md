@@ -12,12 +12,12 @@ A tiny modular CSS framework with a modern look, dark theme support, and utiliti
 
 CDN
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@atomic-stack/theme">
+<link rel="stylesheet" href="https://unpkg.com/atomic-theme">
 ```
 
 Or install with `npm` or `yarn`
 ```
-npm install @atomic-stack/theme
+npm install atomic-theme
 ```
 
 ### Browser support
