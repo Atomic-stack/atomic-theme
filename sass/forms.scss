@@ -10,7 +10,7 @@ select,
 textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: inherit; /* 1 */
+  line-height: normal; /* 1 */
   margin: 0.25rem 0; /* 2 */
   /* 3 */
   &:focus {
@@ -130,7 +130,7 @@ button {
   }
 
   &.round {
-    border-radius: 20px;
+    border-radius: 2rem;
   }
 
   &.primary,
