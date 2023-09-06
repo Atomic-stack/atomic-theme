@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <link rel="stylesheet" href="/css/index.css" />
+    <style>
+      input, select, textarea {
+        display: block;
+      }
+      label {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
   <body class="container">
     <nav class="nav">
@@ -174,7 +183,7 @@
         <legend>HTML5 inputs</legend>
 
         <p>
-          <label> <input type="color" /> Color </label>
+          <label>Color <input type="color" /> </label>
         </p>
 
         <label>
@@ -277,9 +286,9 @@
       <p>
         <button>Default</button>
         <button class="primary">Primary</button>
+        <button class="primary round">Round</button>
         <button class="secondary">Secondary</button>
         <button class="dark">Dark</button>
-        <button class="dark round">Round</button>
         <button class="clear">Clear</button>
       </p>
       
@@ -293,7 +302,7 @@
 
       <h5>With icons</h5>
       <p>
-        <button>
+        <button class="primary">
           <span class="icon">❯</span>
           <span>Button icon</span>
         </button>
