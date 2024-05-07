@@ -1,6 +1,6 @@
 {
   "name": "atomic-theme",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A tiny modular CSS framework with a modern look, dark theme support, and utilities to build modern websites, faster.",
   "main": "css/index.css",
   "scripts": {
