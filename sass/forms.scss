@@ -4,19 +4,19 @@
 3. Add focus state outline.
 */
 button,
-input,
+input:not([type="range"]),
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
+  font: inherit; /* 1 */
   line-height: normal; /* 1 */
+  letter-spacing: inherit;
+  word-spacing: inherit;
   margin: 0; /* 2 */
   /* 3 */
   &:focus {
-    border-color: var(--color-primary) !important;
+    outline: 0.15em solid var(--color-primary);
     box-shadow: 0 0 0 1px var(--color-primary);
-    outline: none;
   }
 
   &:disabled {
@@ -112,20 +112,9 @@ Remove the inner padding in Chrome and Safari on macOS.
 }
 
 /* Inputs */
-input[type='text'],
-input[type='password'],
-input[type='email'],
-input[type='number'],
-input[type='url'],
-input[type='date'],
-input[type='datetime-local'],
-input[type='month'],
-input[type='week'],
-input[type='time'],
-input[type='search'],
-input[type='tel'],
 select,
-textarea {
+textarea,
+input:not([type="checkbox"]):not([type="color"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: inherit;

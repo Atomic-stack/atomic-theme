@@ -1,4 +1,4 @@
-/*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/* modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /**
 Use a better box model (opinionated).
@@ -35,8 +35,8 @@ Use a better box model (opinionated).
 */
 html {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size);
-  line-height: var(--font-height);
+  font-size: 100%; /* 1 */
+  line-height: var(--font-height); /* 1 */
   height: 100%;
   -webkit-text-size-adjust: 100%; /* 2 */
 }
