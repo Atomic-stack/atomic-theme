@@ -4,7 +4,6 @@
 3. Add focus state outline.
 */
 button,
-input:not([type="range"]),
 optgroup,
 select,
 textarea {
@@ -58,7 +57,7 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 }
 
 fieldset {
-  border: 1px solid var(--color-mediumGrey);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
 }
 
@@ -102,25 +101,27 @@ Remove the inner padding in Chrome and Safari on macOS.
   font: inherit; /* 2 */
 }
 
-
-.grouped {
-  display: flex;
-
-  & > * + * {
-    margin-left: 1rem;
-  }
-}
-
 /* Inputs */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=url],
+input[type=date],
+input[type=datetime-local],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=search],
+input[type=tel],
 select,
-textarea,
-input:not([type="checkbox"]):not([type="color"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
+textarea {
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: inherit;
   padding: 0.5rem;
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-mediumGrey);
+  border: 1px solid var(--border-color);
   font-size: 1em;
   transition: all 0.2s ease-out 0s;
 }
@@ -145,10 +146,18 @@ select {
 }
 
 ::placeholder {
-  color: var(--color-mediumGrey);
+  color: var(--font-color-50);
 }
 
 .hint {
-  color: var(--color-grey);
+  color: var(--font-color-70);
   font-size: 80%;
+}
+
+.grouped {
+  display: flex;
+
+  & > * + * {
+    margin-left: 1rem;
+  }
 }

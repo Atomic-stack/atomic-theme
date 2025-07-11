@@ -1,18 +1,109 @@
-// This file imports all the sensible defaults.
 :root {
   --bg-color: #fff;
   --font-color: #222;
-  --color-primary: #3333ee;
-  --color-grey: #747681;
-  --color-lightGrey: #d2d6dd;
-  --color-mediumGrey: #aaa;
-  --color-darkGrey: rgb(41, 41, 41);
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: rgb(0, 136, 255);
   --color-code: #905;
-  --font-family-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji';
-  --font-family-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
-  --font-height: 1.6;
+  --font-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --line-height: 1.6;
   --border-radius: 0.5rem;
+  --border-color: var(--font-color-30);
+}
+
+body {
+  color: var(--font-color);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: var(--line-height);
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--font-color-50) var(--bg-color);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+a {
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid var(--font-color-30);
+  margin: 0 0 1rem 0;
+  padding: 0 2rem 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--font-color-30); /* 2 */
+}
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: middle;
+  padding: 1rem 0.25rem;
+  border-bottom: 0.5px solid var(--font-color-30);
+}
+
+tfoot {
+  border-top: 0.5px solid var(--font-color-30);
+}
+
+code,
+kbd {
+  padding: 0 0.5rem;
+  white-space: pre-wrap;
+  border-radius: 0.25rem;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  border-radius: var(--border-radius);
+  display: block;
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-size: 90%;
+  color: var(--color-code);
 }
 
 /*
@@ -20,12 +111,10 @@ Dark color scheme
 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: transparent;
-    --font-color: inherit;
-    --color-primary: #4d4dff;
+    --bg-color: var(--color-black);
+    --font-color: var(--color-white);
+    --color-primary: rgb(0, 145, 255);
     --color-code: #19a974;
-    --color-mediumGrey: #777;
-    --color-grey: rgba(255, 255, 255, 0.5);
   }
 
   html {
@@ -40,12 +129,3 @@ Dark color scheme
     filter: brightness(0.8) contrast(1.2);
   }
 }
-
-@import 'media-queries';
-@import 'normalize';
-@import 'typography';
-@import 'nav';
-@import 'forms';
-@import 'button';
-@import 'card';
-@import 'dialog';
