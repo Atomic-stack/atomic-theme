@@ -1,0 +1,26 @@
+/* The root layer contains the entry point with settings and imports. */
+:root {
+  --bg-color: #fff;
+  --font-color: #222;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: rgb(0, 136, 255);
+  --font-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --line-height: 1.6;
+  --border-radius: 0.5rem;
+  --font-color-30: color-mix(in srgb, var(--font-color) 20%, transparent);
+  --font-color-50: color-mix(in srgb, var(--font-color) 50%, transparent);
+  --font-color-70: color-mix(in srgb, var(--font-color) 70%, transparent);
+  --border-color: var(--font-color-30);
+}
+
+@import 'media-queries';
+@import 'normalize';
+@import 'base';
+@import 'nav';
+@import 'forms';
+@import 'button';
+@import 'card';
+@import 'dialog';
