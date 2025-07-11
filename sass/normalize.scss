@@ -1,57 +1,30 @@
-/* modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/* Normalizes styles across all browsers to make things consistent. */
+:root {
+  --font-sans: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+  --line-height: 1.15;
+}
 
-/**
-Use a better box model (opinionated).
-*/
+/* Fix box model */
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
-/* Scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-grey) var(--bg-primary);
-}
-
-*::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background: var(--color-mediumGrey);
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--bg-color);
-}
-
-/**
-1. Correct the line height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-*/
 html {
-  font-family: var(--font-family-sans);
-  font-size: 100%; /* 1 */
-  line-height: var(--font-height); /* 1 */
-  height: 100%;
-  -webkit-text-size-adjust: 100%; /* 2 */
+  /* Use system fonts */
+  font-family: var(--font-sans);
+  /* Fix line height */
+  line-height: var(--line-height);
+  /* Prevent font size adjustments in iOS */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-weight: 400;
-  background-color: var(--bg-color);
-  color: var(--font-color);
+  /* Remove body margin */
   margin: 0;
-}
-
-a {
-  color: var(--color-primary);
-  cursor: pointer;
-  text-decoration: none;
 }
 
 p,
@@ -61,113 +34,27 @@ pre {
   margin-bottom: 1rem;
 }
 
-blockquote {
-  border-left: 3px solid var(--color-lightGrey);
-  margin: 0 0 1rem 0;
-  padding: 0 2rem 0;
-}
-
-/**
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-*/
-hr {
-  border: none;
-  border-top: 1px solid var(--color-mediumGrey); /* 2 */
-}
-
-/**
-Add the correct font weight in Edge and Safari.
-*/
 b,
 strong {
+  /* Fix font weight in Edge, Safari */
   font-weight: bolder;
 }
 
-/**
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-*/
 table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-align: left;
+  /* Fix border color inheritance */
+  border-color: currentcolor;
 }
 
-td,
-th {
-  vertical-align: middle;
-  padding: 1rem 0.25rem;
-  border-bottom: 0.5px solid var(--color-mediumGrey);
-}
-
-tfoot {
-  border-top: 0.5px solid var(--color-mediumGrey);
-}
-
-/**
-1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-2. Correct the odd 'em' font sizing in all browsers.
-*/
 code,
 kbd,
 samp,
 pre {
-  font-family: var(--font-family-mono); /* 1 */
-  font-size: 90%; /* 2 */
-  color: var(--color-code);
+  /* Fix default fonts */
+  font-family: var(--font-mono);
+  font-size: 1em;
 }
 
-code,
-kbd {
-  padding: 0 0.5rem;
-  white-space: pre-wrap;
-  border-radius: 0.25rem;
-  padding: 0.2em 0.4em;
-}
-
-pre {
-  border-radius: 0.5rem;
-  display: block;
-  padding: 1rem;
-  overflow: auto;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-  code {
-    background: none;
-    padding: 0;
-  }
-}
-
-/**
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline dotted;
-}
-
-/**
-Images are block level
-*/
-img,
-svg,
-picture,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-}
-
-/**
-Images width constrained
-*/
+/* Fix images width */
 img,
 picture,
 video {
@@ -175,20 +62,12 @@ video {
   height: auto;
 }
 
-iframe {
-  border: 0;
-}
-
-/**
-Add the correct font size in all browsers.
-*/
+/* Fix small font size */
 small {
   font-size: 80%;
 }
 
-/**
-Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
-*/
+/* Fix elements line height */
 sub,
 sup {
   font-size: 75%;
@@ -205,17 +84,67 @@ sup {
   top: -0.5em;
 }
 
-/**
-Add the correct vertical alignment in Chrome and Firefox.
-*/
 progress {
+  /* Fix vertical alignment in Chrome, Firefox */
   vertical-align: baseline;
 }
 
-/*
-Add the correct display in Chrome and Safari.
-*/
 summary {
+  /* Fix display mode in Chrome, Safari */
   cursor: pointer;
   display: list-item;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  /* Fix font styles and margins in Firefox, Safari */
+  font-family: inherit;
+  font-size: 100%;
+  line-height: var(--line-height);
+  margin: 0;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  /* Fix appearance for styling in iOS */
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+legend {
+  /* Fix the padding */
+  padding: 0;
+}
+
+/* Fix increment, decrement buttons in Safari */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type='search'] {
+  /* Fix appearance, outline */
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  /* Fix inner padding */
+  -webkit-appearance: none;
+}
+
+/* Fix upload button appearance in Safari */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Fix display mode */
+svg {
+  display: block;
 }
