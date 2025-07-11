@@ -1,5 +1,5 @@
 @import 'media-queries';
-$spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
+$spacing: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 
 .container {
   max-width: 70ch;
@@ -18,98 +18,98 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 .m-auto { margin: auto }
 
 @for $i from 1 through 5 {
-  .m#{$i - 1} {
-    margin: nth($spaces, $i);
+  .m-#{$i - 1} {
+    margin: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .mx#{$i - 1} {
-    margin-left: nth($spaces, $i);
-    margin-right: nth($spaces, $i);
+  .mx-#{$i - 1} {
+    margin-left: nth($spacing, $i);
+    margin-right: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .my#{$i - 1} {
-    margin-top: nth($spaces, $i);
-    margin-bottom: nth($spaces, $i);
+  .my-#{$i - 1} {
+    margin-top: nth($spacing, $i);
+    margin-bottom: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .mt#{$i - 1} {
-    margin-top: nth($spaces, $i);
+  .mt-#{$i - 1} {
+    margin-top: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .mr#{$i - 1} {
-    margin-right: nth($spaces, $i);
+  .mr-#{$i - 1} {
+    margin-right: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .mb#{$i - 1} {
-    margin-bottom: nth($spaces, $i);
+  .mb-#{$i - 1} {
+    margin-bottom: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .ml#{$i - 1} {
-    margin-left: nth($spaces, $i);
+  .ml-#{$i - 1} {
+    margin-left: nth($spacing, $i);
   }
 }
 
 /* Padding */
 @for $i from 1 through 5 {
-  .p#{$i - 1} {
-    padding: nth($spaces, $i);
+  .p-#{$i - 1} {
+    padding: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .px#{$i - 1} {
-    padding-left: nth($spaces, $i);
-    padding-right: nth($spaces, $i);
+  .px-#{$i - 1} {
+    padding-left: nth($spacing, $i);
+    padding-right: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .py#{$i - 1} {
-    padding-top: nth($spaces, $i);
-    padding-bottom: nth($spaces, $i);
+  .py-#{$i - 1} {
+    padding-top: nth($spacing, $i);
+    padding-bottom: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .pt#{$i - 1} {
-    padding-top: nth($spaces, $i);
+  .pt-#{$i - 1} {
+    padding-top: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .pr#{$i - 1} {
-    padding-right: nth($spaces, $i);
+  .pr-#{$i - 1} {
+    padding-right: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .pb#{$i - 1} {
-    padding-bottom: nth($spaces, $i);
+  .pb-#{$i - 1} {
+    padding-bottom: nth($spacing, $i);
   }
 }
 
 @for $i from 1 through 5 {
-  .pl#{$i - 1} {
-    padding-left: nth($spaces, $i);
+  .pl-#{$i - 1} {
+    padding-left: nth($spacing, $i);
   }
 }
 
 /* Border radius */
 @for $i from 1 through 5 {
   .radius-#{$i - 1} {
-    border-radius: nth($spaces, $i);
+    border-radius: nth($spacing, $i);
   }
 }
 
@@ -266,11 +266,11 @@ $spaces: 0 0.25rem 0.5rem 0.75rem 1rem 1.5rem 2rem 3rem 4rem 6rem 8rem;
 @mixin gap($i, $size: '') {
   @if $size != '' {
     .#{$size}-gap-#{$i} {
-      gap: nth($spaces, $i + 1);
+      gap: nth($spacing, $i + 1);
     }
   } @else {
     .gap-#{$i} {
-      gap: nth($spaces, $i + 1);
+      gap: nth($spacing, $i + 1);
     }
   }
 }
