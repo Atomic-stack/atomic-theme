@@ -1,3 +1,5 @@
-@import 'base';
+/* This is the entry point file to the build system. */
+@import 'root';
+@import 'typography';
 @import 'layout';
 @import 'utilities';

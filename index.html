@@ -4,11 +4,9 @@
     <title>Atomic Theme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href="https://unpkg.com/@atomic-stack/theme" />
     <link rel="stylesheet" href="/css/index.css" />
     <style>
-      input, select, textarea {
-        display: block;
-      }
       label {
         display: block;
         margin-bottom: 1rem;
@@ -94,12 +92,12 @@
     </h3>
     <div class="flex">
       <div
-        class="m4 bg-contain bg-center w-50 h-6 shadow-4"
+        class="m-4 bg-contain bg-center w-50 h-6 shadow-4"
         style="
           background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
         "></div>
       <div
-        class="m4 bg-cover bg-center w-50 h-6"
+        class="m-4 bg-cover bg-center w-50 h-6"
         style="
           background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
         "></div>
@@ -110,21 +108,21 @@
     </h3>
     <div class="grid grid-cols-3 gap-4">
       <div
-        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        class="m-4 bg-cover bg-center h-6 drop-shadow-2"
         style="
           background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
         ">
         <div class="w-100 h-100 overlay-top"></div>
       </div>
       <div
-        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        class="m-4 bg-cover bg-center h-6 drop-shadow-2"
         style="
           background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
         ">
         <div class="w-100 h-100 overlay-bottom"></div>
       </div>
       <div
-        class="m4 bg-cover bg-center h-6 drop-shadow-2"
+        class="m-4 bg-cover bg-center h-6 drop-shadow-2"
         style="
           background-image: url(https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&h=640&q=80);
         ">
@@ -454,7 +452,7 @@
       </form>
     </dialog>
     <p>
-      <button onclick="document.getElementById('dialog').showModal()">Show</button>
+      <button onclick="dialog.showModal()">Show</button>
     </p>
 
     <h3>Progress</h3>
